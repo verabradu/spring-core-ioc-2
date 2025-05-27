@@ -1,17 +1,25 @@
 package pixel.academy.spring_core_ioc.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import util.Chef;
+import pixel.academy.spring_core_ioc.common.Chef;
 
 @RestController
 public class DemoController {
 
-    private final Chef myChef;
+    private Chef myChef;
 
+     // setter injection
+     // @Autowired
+     //public void setMyChef(Chef theChef) {
+     //   myChef = theChef;
+     //}
+
+    // constructor injection
     @Autowired
-    public DemoController(Chef theChef) {
+    public DemoController(@Qualifier("turkishChef") Chef theChef) {
         myChef = theChef;
     }
 

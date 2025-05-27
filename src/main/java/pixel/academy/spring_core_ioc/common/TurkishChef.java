@@ -1,13 +1,12 @@
-package util;
+package pixel.academy.spring_core_ioc.common;
+
 
 import org.springframework.stereotype.Component;
 
 @Component
-
-public class ItalianChef implements Chef {
+public class TurkishChef implements Chef {
     @Override
-
     public String getDailyRecipe() {
-        return "Prepare pasta!";
+        return "Kebab";
     }
 }
